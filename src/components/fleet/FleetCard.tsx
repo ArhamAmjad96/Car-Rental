@@ -39,14 +39,14 @@ export function FleetCard({
         </div>
       </div>
 
-      {/* Image Container — Perfectly framed on the vehicle body */}
+      {/* Image Container — Slightly Zoomed Out with Ideal Vehicle Framing */}
       <div className="relative w-full h-[280px] sm:h-[340px] md:h-[360px] bg-[#090909] overflow-hidden flex items-center justify-center">
         <Image
           src={vehicle.image}
           alt={`${vehicle.name} - REXX Luxury Rental Kuala Lumpur`}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover object-[center_80%] scale-[1.03] group-hover:scale-108 transition-transform duration-700 ease-out z-0"
+          className="object-cover object-[center_72%] scale-100 group-hover:scale-105 transition-transform duration-700 ease-out z-0"
           priority={false}
         />
         {/* Subtle Bottom Vignette */}
