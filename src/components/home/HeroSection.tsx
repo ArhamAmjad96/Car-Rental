@@ -49,7 +49,7 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.45 }}
               className="text-base sm:text-lg text-neutral-400 font-normal leading-relaxed mb-8 max-w-lg"
             >
-              Premium vehicle rentals and executive mobility across Kuala Lumpur. Experience uncompromising quality, privacy, and distinction.
+              Premium vehicle rentals and executive mobility across Kuala Lumpur.
             </motion.p>
 
             {/* CTAs */}
