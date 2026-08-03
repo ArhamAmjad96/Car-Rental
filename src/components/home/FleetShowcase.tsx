@@ -65,9 +65,9 @@ export function FleetShowcase() {
                   isFeaturedLarge ? "w-[340px] sm:w-[480px]" : "w-[290px] sm:w-[360px]"
                 }`}
               >
-                {/* Visual Area */}
+                {/* Visual Area — Full Picture object-contain */}
                 <div
-                  className={`relative w-full bg-[#090909] overflow-hidden flex items-center justify-center ${
+                  className={`relative w-full bg-[#080808] overflow-hidden flex items-center justify-center p-2 ${
                     isFeaturedLarge ? "h-[280px] sm:h-[340px]" : "h-[240px] sm:h-[280px]"
                   }`}
                 >
@@ -76,7 +76,7 @@ export function FleetShowcase() {
                     alt={`${v.name} - REXX Luxury Rental`}
                     fill
                     sizes="(max-width: 768px) 300px, 480px"
-                    className="object-cover object-[center_72%] scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="object-contain group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
 
                   <span className="absolute top-4 left-4 px-3 py-1 bg-black/80 backdrop-blur-md text-[10px] font-bold tracking-widest text-red-500 uppercase border border-neutral-800 z-10">
