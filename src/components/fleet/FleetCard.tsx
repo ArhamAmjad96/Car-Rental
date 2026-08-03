@@ -24,12 +24,12 @@ export function FleetCard({
       whileHover={{ y: -6 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
       className={cn(
-        "group relative bg-[#0D0D0D] border border-neutral-800 flex flex-col justify-between h-full overflow-hidden rounded-none",
+        "group relative bg-[#0D0D0D] border border-neutral-800 flex flex-col justify-between h-full overflow-hidden rounded-none shadow-xl",
         className
       )}
     >
       {/* Top Meta Bar */}
-      <div className="bg-[#141414] px-5 py-3 border-b border-neutral-800 flex items-center justify-between z-10">
+      <div className="bg-[#141414] px-6 py-3.5 border-b border-neutral-800 flex items-center justify-between z-10">
         <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-red-500">
           {vehicle.categoryLabel}
         </span>
@@ -39,22 +39,25 @@ export function FleetCard({
         </div>
       </div>
 
-      {/* Image Container — Renders the FULL original picture without any zoom-in */}
-      <div className="relative w-full h-[280px] sm:h-[340px] md:h-[360px] bg-[#080808] overflow-hidden flex items-center justify-center p-2">
+      {/* Bigger Image Container matching original photo proportions (3:4 ratio) */}
+      <div className="relative w-full h-[400px] sm:h-[480px] md:h-[520px] bg-[#080808] overflow-hidden flex items-center justify-center">
         <Image
           src={vehicle.image}
           alt={`${vehicle.name} - REXX Luxury Rental Kuala Lumpur`}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-contain group-hover:scale-105 transition-transform duration-700 ease-out z-0"
+          className="object-cover object-bottom group-hover:scale-105 transition-transform duration-700 ease-out z-0"
           priority={false}
         />
+
+        {/* Minimal Bottom Gradient for smooth transition to card content */}
+        <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-[#0D0D0D] to-transparent pointer-events-none z-10" />
       </div>
 
       {/* Content Area */}
-      <div className="p-6 flex flex-col justify-between flex-grow space-y-4">
+      <div className="p-6 sm:p-7 flex flex-col justify-between flex-grow space-y-5">
         <div>
-          <h3 className="text-xl sm:text-2xl font-bold font-heading text-white group-hover:text-red-500 transition-colors">
+          <h3 className="text-2xl font-bold font-heading text-white group-hover:text-red-500 transition-colors">
             {vehicle.name}
           </h3>
           <p className="text-xs sm:text-sm text-neutral-400 mt-2 leading-relaxed line-clamp-2">
@@ -74,7 +77,7 @@ export function FleetCard({
           </div>
 
           {/* Action Buttons */}
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-3 pt-1">
             <Link
               href={`/fleet/${vehicle.slug}`}
               className="py-3 px-4 bg-neutral-900 hover:bg-neutral-800 text-neutral-200 text-center text-xs font-semibold uppercase tracking-wider transition-colors border border-neutral-700/60 flex items-center justify-center space-x-1.5"

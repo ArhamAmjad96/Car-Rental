@@ -62,13 +62,13 @@ export function FleetShowcase() {
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.3 }}
                 className={`snap-start flex-shrink-0 bg-[#141414] border border-neutral-800 flex flex-col justify-between overflow-hidden group ${
-                  isFeaturedLarge ? "w-[340px] sm:w-[480px]" : "w-[290px] sm:w-[360px]"
+                  isFeaturedLarge ? "w-[360px] sm:w-[480px]" : "w-[300px] sm:w-[380px]"
                 }`}
               >
-                {/* Visual Area — Full Picture object-contain */}
+                {/* Visual Area — Bigger framing */}
                 <div
-                  className={`relative w-full bg-[#080808] overflow-hidden flex items-center justify-center p-2 ${
-                    isFeaturedLarge ? "h-[280px] sm:h-[340px]" : "h-[240px] sm:h-[280px]"
+                  className={`relative w-full bg-[#080808] overflow-hidden flex items-center justify-center ${
+                    isFeaturedLarge ? "h-[380px] sm:h-[460px]" : "h-[320px] sm:h-[400px]"
                   }`}
                 >
                   <Image
@@ -76,7 +76,7 @@ export function FleetShowcase() {
                     alt={`${v.name} - REXX Luxury Rental`}
                     fill
                     sizes="(max-width: 768px) 300px, 480px"
-                    className="object-contain group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="object-cover object-bottom group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
 
                   <span className="absolute top-4 left-4 px-3 py-1 bg-black/80 backdrop-blur-md text-[10px] font-bold tracking-widest text-red-500 uppercase border border-neutral-800 z-10">
