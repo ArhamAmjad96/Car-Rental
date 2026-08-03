@@ -18,7 +18,10 @@ interface FleetCardProps {
 export function FleetCard({
   vehicle,
   className,
+  imagePosition,
 }: FleetCardProps) {
+  const activePosition = vehicle.imagePosition || imagePosition || "object-center";
+
   return (
     <motion.div
       whileHover={{ y: -6 }}
@@ -39,19 +42,22 @@ export function FleetCard({
         </div>
       </div>
 
-      {/* Bigger Image Container matching original photo proportions (3:4 ratio) */}
-      <div className="relative w-full h-[400px] sm:h-[480px] md:h-[520px] bg-[#080808] overflow-hidden flex items-center justify-center">
+      {/* Image Container — Perfectly Centered on the Vehicle */}
+      <div className="relative w-full h-[360px] sm:h-[420px] md:h-[460px] bg-[#080808] overflow-hidden flex items-center justify-center">
         <Image
           src={vehicle.image}
           alt={`${vehicle.name} - REXX Luxury Rental Kuala Lumpur`}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover object-bottom group-hover:scale-105 transition-transform duration-700 ease-out z-0"
+          className={cn(
+            "object-cover group-hover:scale-105 transition-transform duration-700 ease-out z-0",
+            activePosition
+          )}
           priority={false}
         />
 
-        {/* Minimal Bottom Gradient for smooth transition to card content */}
-        <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-[#0D0D0D] to-transparent pointer-events-none z-10" />
+        {/* Minimal Bottom Vignette */}
+        <div className="absolute bottom-0 inset-x-0 h-8 bg-gradient-to-t from-[#0D0D0D] to-transparent pointer-events-none z-10" />
       </div>
 
       {/* Content Area */}
