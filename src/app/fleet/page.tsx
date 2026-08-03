@@ -51,7 +51,7 @@ export default function FleetPage() {
         {/* Fleet Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredVehicles.map((vehicle) => (
-            <FleetCard key={vehicle.id} vehicle={vehicle} aspectRatio="portrait" />
+            <FleetCard key={vehicle.id} vehicle={vehicle} />
           ))}
         </div>
       </Container>

@@ -20,51 +20,13 @@ export function FeaturedFleet() {
           description="A handpicked fleet of executive sedans, high-performance SUVs, and luxury transports maintained to pristine standards."
         />
 
-        {/* Asymmetrical Layout Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 mb-12 items-start">
-          {/* Card 1 - Main Large Feature Card (Span 7) - Performance SUV */}
-          {featuredVehicles[0] && (
-            <div className="lg:col-span-7">
-              <FleetCard
-                vehicle={featuredVehicles[0]}
-                aspectRatio="landscape"
-                imagePosition="object-center"
-              />
+        {/* Uniform 2x2 Grid — Every Card is Exactly the Same Size */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {featuredVehicles.map((vehicle) => (
+            <div key={vehicle.id} className="w-full">
+              <FleetCard vehicle={vehicle} />
             </div>
-          )}
-
-          {/* Card 2 - Stacked Right Top (Span 5) - Signature Mercedes */}
-          {featuredVehicles[1] && (
-            <div className="lg:col-span-5">
-              <FleetCard
-                vehicle={featuredVehicles[1]}
-                aspectRatio="landscape"
-                imagePosition="object-center"
-              />
-            </div>
-          )}
-
-          {/* Card 3 - Executive Chauffeur (Span 5) */}
-          {featuredVehicles[2] && (
-            <div className="lg:col-span-5">
-              <FleetCard
-                vehicle={featuredVehicles[2]}
-                aspectRatio="landscape"
-                imagePosition="object-center"
-              />
-            </div>
-          )}
-
-          {/* Card 4 - Toyota Luxury MPV (Span 7) */}
-          {featuredVehicles[3] && (
-            <div className="lg:col-span-7">
-              <FleetCard
-                vehicle={featuredVehicles[3]}
-                aspectRatio="landscape"
-                imagePosition="object-center"
-              />
-            </div>
-          )}
+          ))}
         </div>
 
         {/* Footer CTA */}
