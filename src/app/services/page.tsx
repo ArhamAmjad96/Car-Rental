@@ -4,8 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/shared/Container";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { servicesData } from "@/data/services";
-import { CheckCircle2, ArrowRight, ShieldCheck } from "lucide-react";
-import { MagneticButton } from "@/components/shared/MagneticButton";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function ServicesPage() {
   return (
@@ -28,9 +27,9 @@ export default function ServicesPage() {
                 id={service.slug}
                 className="bg-[#0D0D0D] border border-neutral-800 p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
               >
-                {/* Image (Span 6) */}
+                {/* Image with object-contain */}
                 <div
-                  className={`lg:col-span-6 relative h-[350px] sm:h-[420px] w-full bg-neutral-950 border border-neutral-800 overflow-hidden ${
+                  className={`lg:col-span-6 relative h-[350px] sm:h-[420px] w-full bg-[#080808] border border-neutral-800 overflow-hidden p-3 flex items-center justify-center ${
                     isReversed ? "lg:order-2" : "lg:order-1"
                   }`}
                 >
@@ -39,16 +38,16 @@ export default function ServicesPage() {
                     alt={`${service.title} - REXX Luxury Rental`}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover object-center"
+                    className="object-contain z-0"
                   />
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute top-4 left-4 z-10">
                     <span className="px-3 py-1 bg-black/80 backdrop-blur-md text-[10px] font-bold tracking-widest text-red-500 uppercase border border-neutral-800">
                       {service.badge}
                     </span>
                   </div>
                 </div>
 
-                {/* Details (Span 6) */}
+                {/* Details */}
                 <div
                   className={`lg:col-span-6 space-y-6 ${
                     isReversed ? "lg:order-1" : "lg:order-2"

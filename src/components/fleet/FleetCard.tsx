@@ -18,7 +18,6 @@ interface FleetCardProps {
 export function FleetCard({
   vehicle,
   className,
-  imagePosition = "object-cover object-bottom",
 }: FleetCardProps) {
   return (
     <motion.div
@@ -29,7 +28,7 @@ export function FleetCard({
         className
       )}
     >
-      {/* Top Meta Bar (Outside Image so text never overlaps the car roof) */}
+      {/* Top Meta Bar */}
       <div className="bg-[#141414] px-5 py-3 border-b border-neutral-800 flex items-center justify-between z-10">
         <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-red-500">
           {vehicle.categoryLabel}
@@ -40,22 +39,16 @@ export function FleetCard({
         </div>
       </div>
 
-      {/* Image Container — Aligned to Bottom where the Car is located */}
-      <div className="relative w-full h-[260px] sm:h-[320px] md:h-[340px] bg-neutral-950 overflow-hidden flex items-center justify-center">
+      {/* Image Container — Uses object-contain so 100% of the car image is visible without cropping */}
+      <div className="relative w-full h-[300px] sm:h-[360px] md:h-[380px] bg-[#080808] overflow-hidden flex items-center justify-center p-3">
         <Image
           src={vehicle.image}
           alt={`${vehicle.name} - REXX Luxury Rental Kuala Lumpur`}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
-          className={cn(
-            "group-hover:scale-105 transition-transform duration-700 ease-out z-0",
-            imagePosition
-          )}
+          className="object-contain group-hover:scale-105 transition-transform duration-700 ease-out z-0"
           priority={false}
         />
-
-        {/* Ultra-subtle bottom shadow for separation */}
-        <div className="absolute bottom-0 inset-x-0 h-6 bg-gradient-to-t from-[#0D0D0D] to-transparent pointer-events-none z-10" />
       </div>
 
       {/* Content Area */}

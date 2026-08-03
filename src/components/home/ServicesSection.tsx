@@ -33,17 +33,16 @@ export function ServicesSection() {
               variants={fadeIn("up")}
               className="group bg-[#0D0D0D] border border-neutral-800 flex flex-col justify-between overflow-hidden hover:border-neutral-700 transition-colors duration-300"
             >
-              {/* Image Banner */}
-              <div className="relative h-48 w-full bg-neutral-950 overflow-hidden">
+              {/* Image Banner with object-contain */}
+              <div className="relative h-56 w-full bg-[#080808] p-3 flex items-center justify-center">
                 <Image
                   src={service.image}
                   alt={`${service.title} - REXX Luxury Rental`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="object-contain group-hover:scale-105 transition-transform duration-700 ease-out z-0"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-transparent to-black/20" />
-                <span className="absolute top-3 left-3 px-2.5 py-1 bg-black/80 backdrop-blur-md text-[10px] font-bold tracking-widest text-red-500 uppercase border border-neutral-800">
+                <span className="absolute top-3 left-3 px-2.5 py-1 bg-black/80 backdrop-blur-md text-[10px] font-bold tracking-widest text-red-500 uppercase border border-neutral-800 z-10">
                   {service.badge}
                 </span>
               </div>

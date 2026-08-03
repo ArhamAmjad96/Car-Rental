@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { vehicles } from "@/data/vehicles";
 import { Container } from "@/components/shared/Container";
 import { EnquiryForm } from "@/components/enquiry/EnquiryForm";
-import { ArrowLeft, CheckCircle2, MapPin, ShieldCheck, Calendar } from "lucide-react";
+import { ArrowLeft, CheckCircle2, MapPin } from "lucide-react";
 
 export function generateStaticParams() {
   return vehicles.map((v) => ({
@@ -37,18 +37,18 @@ export default async function VehicleDetailPage({ params }: { params: Promise<{ 
 
         {/* Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start mb-16">
-          {/* Main Vehicle Image & Gallery (Span 7) */}
+          {/* Main Vehicle Image & Gallery */}
           <div className="lg:col-span-7 space-y-4">
-            <div className="relative h-[400px] sm:h-[500px] w-full bg-neutral-950 border border-neutral-800 overflow-hidden">
+            <div className="relative h-[400px] sm:h-[500px] w-full bg-[#080808] border border-neutral-800 overflow-hidden p-3 flex items-center justify-center">
               <Image
                 src={vehicle.image}
                 alt={`${vehicle.name} - REXX Luxury Car Rental`}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 60vw"
-                className="object-cover object-center"
+                className="object-contain"
               />
-              <div className="absolute top-4 left-4">
+              <div className="absolute top-4 left-4 z-10">
                 <span className="px-3 py-1 bg-black/80 backdrop-blur-md text-[10px] font-bold tracking-widest text-red-500 uppercase border border-neutral-800">
                   {vehicle.categoryLabel}
                 </span>
@@ -61,14 +61,14 @@ export default async function VehicleDetailPage({ params }: { params: Promise<{ 
                 {vehicle.gallery.map((img, idx) => (
                   <div
                     key={idx}
-                    className="relative h-28 bg-neutral-950 border border-neutral-800 overflow-hidden"
+                    className="relative h-32 bg-[#080808] border border-neutral-800 overflow-hidden p-2 flex items-center justify-center"
                   >
                     <Image
                       src={img}
                       alt={`${vehicle.name} gallery view ${idx + 1}`}
                       fill
                       sizes="30vw"
-                      className="object-cover object-center"
+                      className="object-contain"
                     />
                   </div>
                 ))}
@@ -76,7 +76,7 @@ export default async function VehicleDetailPage({ params }: { params: Promise<{ 
             )}
           </div>
 
-          {/* Vehicle Info & Neutral Specs (Span 5) */}
+          {/* Vehicle Info & Neutral Specs */}
           <div className="lg:col-span-5 space-y-6 bg-[#0D0D0D] border border-neutral-800 p-8">
             <div>
               <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-red-500 mb-2">

@@ -65,10 +65,10 @@ export function FleetShowcase() {
                   isFeaturedLarge ? "w-[340px] sm:w-[480px]" : "w-[290px] sm:w-[360px]"
                 }`}
               >
-                {/* Visual Area */}
+                {/* Visual Area with object-contain */}
                 <div
-                  className={`relative w-full bg-neutral-950 overflow-hidden ${
-                    isFeaturedLarge ? "h-[320px] sm:h-[380px]" : "h-[260px] sm:h-[300px]"
+                  className={`relative w-full bg-[#080808] p-3 flex items-center justify-center ${
+                    isFeaturedLarge ? "h-[300px] sm:h-[360px]" : "h-[260px] sm:h-[300px]"
                   }`}
                 >
                   <Image
@@ -76,15 +76,14 @@ export function FleetShowcase() {
                     alt={`${v.name} - REXX Luxury Rental`}
                     fill
                     sizes="(max-width: 768px) 300px, 480px"
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="object-contain group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-black/30" />
 
-                  <span className="absolute top-4 left-4 px-3 py-1 bg-black/80 backdrop-blur-md text-[10px] font-bold tracking-widest text-red-500 uppercase border border-neutral-800">
+                  <span className="absolute top-4 left-4 px-3 py-1 bg-black/80 backdrop-blur-md text-[10px] font-bold tracking-widest text-red-500 uppercase border border-neutral-800 z-10">
                     {v.categoryLabel}
                   </span>
 
-                  <div className="absolute top-4 right-4 flex items-center space-x-1 text-[10px] text-neutral-300 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full border border-neutral-800">
+                  <div className="absolute top-4 right-4 flex items-center space-x-1 text-[10px] text-neutral-300 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full border border-neutral-800 z-10">
                     <MapPin className="w-3 h-3 text-red-500" />
                     <span>{v.specs.location}</span>
                   </div>

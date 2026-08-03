@@ -6,8 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "@/components/shared/Container";
 import { SectionHeading } from "@/components/shared/SectionHeading";
-import { MagneticButton } from "@/components/shared/MagneticButton";
-import { ArrowRight, Eye, ShieldCheck, Sparkles } from "lucide-react";
+import { Eye, ShieldCheck, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface GalleryTab {
@@ -61,11 +60,11 @@ export function SignatureMercedes() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Main Visual Display (Span 8 Desktop) */}
           <div className="lg:col-span-8 relative">
-            <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] w-full bg-neutral-950 overflow-hidden border border-neutral-800">
+            <div className="relative h-[420px] sm:h-[520px] lg:h-[600px] w-full bg-[#080808] overflow-hidden border border-neutral-800 p-4 flex items-center justify-center">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab.id}
-                  initial={{ opacity: 0, scale: 1.03 }}
+                  initial={{ opacity: 0, scale: 1.02 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.98 }}
                   transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -76,16 +75,15 @@ export function SignatureMercedes() {
                     alt={`REXX Signature Mercedes ${activeTab.label}`}
                     fill
                     sizes="(max-width: 1024px) 100vw, 65vw"
-                    className="object-cover object-center"
+                    className="object-contain"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
                 </motion.div>
               </AnimatePresence>
 
               {/* Angle Label Badge */}
               <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between z-10">
-                <div className="flex items-center space-x-2 bg-black/70 backdrop-blur-md px-4 py-2 border border-neutral-800">
+                <div className="flex items-center space-x-2 bg-black/80 backdrop-blur-md px-4 py-2 border border-neutral-800">
                   <Sparkles className="w-4 h-4 text-red-500" />
                   <span className="text-xs font-semibold uppercase tracking-wider text-neutral-200">
                     {activeTab.angleLabel}
