@@ -29,7 +29,6 @@ export const vehicles: Vehicle[] = [
     category: "Performance",
     categoryLabel: "Performance Luxury SUV",
     image: "/assets/rexx/fleet/performance-suv-silver.jpg",
-    imagePosition: "object-[center_50%]",
     gallery: [
       "/assets/rexx/fleet/performance-suv-silver.jpg",
       "/assets/rexx/signature/mercedes-angle-03.jpg",
@@ -60,7 +59,6 @@ export const vehicles: Vehicle[] = [
     category: "Executive Sedan",
     categoryLabel: "Flagship Executive Sedan",
     image: "/assets/rexx/hero/signature-mercedes-hero.jpg",
-    imagePosition: "object-[center_60%]",
     gallery: [
       "/assets/rexx/hero/signature-mercedes-hero.jpg",
       "/assets/rexx/signature/mercedes-angle-03.jpg",
@@ -92,7 +90,6 @@ export const vehicles: Vehicle[] = [
     category: "Chauffeur",
     categoryLabel: "Executive Chauffeur",
     image: "/assets/rexx/services/executive-chauffeur-mercedes.jpg",
-    imagePosition: "object-[center_65%]",
     gallery: [
       "/assets/rexx/services/executive-chauffeur-mercedes.jpg",
       "/assets/rexx/signature/mercedes-angle-02.jpg",
@@ -123,7 +120,6 @@ export const vehicles: Vehicle[] = [
     category: "Executive Sedan",
     categoryLabel: "Executive Business Sedan",
     image: "/assets/rexx/fleet/premium-sedan-black.jpg",
-    imagePosition: "object-[center_60%]",
     gallery: [
       "/assets/rexx/fleet/premium-sedan-black.jpg",
       "/assets/rexx/fleet/mercedes-sedan-black.jpg",
@@ -154,7 +150,6 @@ export const vehicles: Vehicle[] = [
     category: "Executive Sedan",
     categoryLabel: "Driver-Focused Luxury",
     image: "/assets/rexx/fleet/bmw-executive-sedan.jpg",
-    imagePosition: "object-[center_60%]",
     gallery: [
       "/assets/rexx/fleet/bmw-executive-sedan.jpg",
       "/assets/rexx/signature/mercedes-angle-03.jpg",
@@ -184,7 +179,6 @@ export const vehicles: Vehicle[] = [
     category: "Executive Transport",
     categoryLabel: "Luxury Transport MPV",
     image: "/assets/rexx/fleet/toyota-luxury-mpv.jpg",
-    imagePosition: "object-[center_60%]",
     gallery: [
       "/assets/rexx/fleet/toyota-luxury-mpv.jpg",
       "/assets/rexx/signature/mercedes-interior.jpg",
