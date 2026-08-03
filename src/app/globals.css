@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+:root {
+  --background: #060606;
+  --bg-secondary: #0D0D0D;
+  --bg-elevated: #141414;
+  --foreground: #F4F4F4;
+  --text-muted: #A2A2A2;
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --border-highlight: rgba(255, 255, 255, 0.25);
+  --accent-red: #DC2626;
+  --accent-red-hover: #EF4444;
+  --accent-red-glow: rgba(220, 38, 38, 0.25);
+  --font-manrope: var(--font-manrope);
+  --font-inter: var(--font-inter);
+}
+
+@theme {
+  --color-dark-bg: var(--background);
+  --color-dark-surface: var(--bg-secondary);
+  --color-dark-elevated: var(--bg-elevated);
+  --color-rexx-red: var(--accent-red);
+  --color-rexx-red-light: var(--accent-red-hover);
+  --color-light-text: var(--foreground);
+  --color-muted-text: var(--text-muted);
+  --font-heading: var(--font-manrope), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #060606;
+  color: #F4F4F4;
+  color-scheme: dark;
+}
+
+body {
+  background-color: #060606;
+  color: #F4F4F4;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
+  selection-background-color: #DC2626;
+  selection-color: #FFFFFF;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060606;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #DC2626;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(13, 13, 13, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-nav {
+  background: rgba(6, 6, 6, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Red ambient glow effects */
+.red-ambient-glow {
+  box-shadow: 0 0 80px -10px rgba(220, 38, 38, 0.25);
+}
+
+.red-line-accent {
+  background: linear-gradient(90deg, #DC2626 0%, rgba(220, 38, 38, 0) 100%);
+}
+
+/* Hide scrollbar for clean horizontal scrolls */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
